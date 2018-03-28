@@ -12,7 +12,7 @@ RUN set -x \
  && apt-get update && apt-get install -y --no-install-recommends ca-certificates acmetool
 
 RUN set -x \
- && echo @weekly acmetool --batch | crontab - 
+ && echo @weekly acmetool --batch | crontab - \
  && echo @weekly service nginx reload
 
 COPY nginx-acmetool.conf /nginx-acmetool.conf
